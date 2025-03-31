@@ -15,4 +15,4 @@ get_header(); ?>
 
 <?php include(get_template_directory() . '/components/enterwell-giveaway-form.php'); ?>
 
-<?php get_footer(); ?>  
+<?php get_footer(); ?>
