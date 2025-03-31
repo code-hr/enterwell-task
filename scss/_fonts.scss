@@ -1,0 +1,225 @@
+$font-size-default: 18px;
+$font-size-large: 20px;
+$font-size-xlarge: 50px;
+$font-size-h2: 50px;
+h1 {
+    font-size: $font-size-xlarge;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+    opacity: 0.8;
+
+    @media (max-width: 992px) {
+        font-size: 32px;
+    }
+}
+
+h2 {
+    font-size: $font-size-default;
+    color: $text-color-secondary;
+    max-width: 524px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+
+    @media (max-width: 992px) {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+p, span, a {
+    font-size: $font-size-default;
+    color: $text-color; 
+}
+
+
+// Catamaran fonts
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../assets/fonts/Catamaran/Catamaran-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+
+// Raleway fonts
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway/Raleway-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
