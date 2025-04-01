@@ -1,0 +1,26 @@
+.table-entries {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.table-entries th, .table-entries td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.table-entries th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.table-entries tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-entries tr:hover {
+  background-color: #f1f1f1;
+}
+/*# sourceMappingURL=dashboard-menu.css.map */

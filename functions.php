@@ -28,6 +28,12 @@ function theme_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
+function enqueue_custom_admin_styles() {
+    wp_enqueue_style('admin-main-css', get_template_directory_uri() . '/scss/dashboard/dashboard-menu.css', array(), '1.0.0');
+}
+add_action('admin_enqueue_scripts', 'enqueue_custom_admin_styles');
+
+
 
 
 // AJAX check user exists
@@ -145,4 +151,79 @@ function handle_form_submission() {
     }
     
     exit;
+}
+
+// Add a new menu page in the WordPress admin dashboard
+add_action('admin_menu', 'register_custom_menu_page');
+
+function register_custom_menu_page() {
+    add_menu_page(
+        __('Giveaway Form Entries', 'textdomain'), // Page title
+        __('Giveaway Form Entries', 'textdomain'), // Menu title
+        'manage_options',                 // Capability
+        'giveaway-form-entries',                   // Menu slug
+        'display_form_entries',           // Callback function
+        'dashicons-list-view',            // Icon
+        6                                 // Position
+    );
+}
+
+
+// dashboard menu
+function display_form_entries() {
+    global $wpdb;
+    $table = $wpdb->prefix . 'enterwell_giveaway_form';
+
+    $entry_count = $wpdb->get_var("SELECT COUNT(*) FROM $table");
+
+    $entries = $wpdb->get_results("SELECT * FROM $table");
+
+    echo '<div class="table-entries-wrapper">';
+    echo '<h1>' . __('Giveaway Form Entries', 'textdomain') . '</h1>';
+    echo '<p>' . sprintf(__('Total Entries: %d', 'textdomain'), $entry_count) . '</p>';
+    
+    if ($entries) {
+        echo '<table class="widefat table-entries fixed" cellspacing="0">';
+        echo '<thead><tr>';
+        echo '<th>' . __('ID', 'textdomain') . '</th>';
+        echo '<th>' . __('Document', 'textdomain') . '</th>';
+        echo '<th>' . __('Account Number', 'textdomain') . '</th>';
+        echo '<th>' . __('First Name', 'textdomain') . '</th>';
+        echo '<th>' . __('Last Name', 'textdomain') . '</th>';
+        echo '<th>' . __('Email', 'textdomain') . '</th>';
+        echo '<th>' . __('Address', 'textdomain') . '</th>';
+        echo '<th>' . __('House Number', 'textdomain') . '</th>';
+        echo '<th>' . __('City', 'textdomain') . '</th>';
+        echo '<th>' . __('Zip Code', 'textdomain') . '</th>';
+        echo '<th>' . __('Country', 'textdomain') . '</th>';
+        echo '<th>' . __('Mobile', 'textdomain') . '</th>';
+        echo '</tr></thead><tbody>';
+
+        foreach ($entries as $entry) {
+            echo '<tr>';
+            echo '<td>' . esc_html($entry->id) . '</td>';
+            echo '<td>';
+            if (!empty($entry->document)) {
+                echo '<a href="' . esc_url($entry->document) . '" target="_blank">' . 'Link' . '</a>';
+            }
+            echo '</td>';
+            echo '<td>' . esc_html($entry->account_number) . '</td>';
+            echo '<td>' . esc_html($entry->first_name) . '</td>';
+            echo '<td>' . esc_html($entry->last_name) . '</td>';
+            echo '<td>' . esc_html($entry->email) . '</td>';
+            echo '<td>' . esc_html($entry->address) . '</td>';
+            echo '<td>' . esc_html($entry->house_number) . '</td>';
+            echo '<td>' . esc_html($entry->city) . '</td>';
+            echo '<td>' . esc_html($entry->zip_code) . '</td>';
+            echo '<td>' . esc_html($entry->country) . '</td>';
+            echo '<td>' . esc_html($entry->mobile) . '</td>';
+            echo '</tr>';
+        }
+
+        echo '</tbody></table>';
+    } else {
+        echo '<p>' . __('No entries found.', 'textdomain') . '</p>';
+    }
+
+    echo '</div>';
 }
