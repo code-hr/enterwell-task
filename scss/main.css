@@ -503,6 +503,14 @@ body {
   font-weight: 500;
 }
 
+.form-section .form-container form .form-content .form-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-section .form-container form .form-content .form-group input[type="number"]::-webkit-inner-spin-button, .form-section .form-container form .form-content .form-group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 .form-section .form-container form .form-content .form-group input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;

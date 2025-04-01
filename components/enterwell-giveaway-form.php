@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="account_number" name="account_number" placeholder="Broj računa*" required>
+              <input type="number" class="form-control" id="account_number" name="account_number" placeholder="Broj računa*" required>
               <label for="account_number" class="input-label">Broj računa*</label>
               <span class="error-message">* Obavezna ispuna polja</span>
               <span class="required-focus">* Obavezno</span>
@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="house_number" name="house_number" placeholder="Kućni broj*" required>
+              <input type="number" class="form-control" id="house_number" name="house_number" placeholder="Kućni broj*" required>
               <label for="house_number" class="input-label">Kućni broj*</label>
               <span class="error-message">* Obavezna ispuna polja</span>
               <span class="required-focus">* Obavezno</span>
@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Poštanski broj*" required>
+              <input type="number" class="form-control" id="zip_code" name="zip_code" placeholder="Poštanski broj*" required>
               <label for="zip_code" class="input-label">Poštanski broj*</label>
               <span class="error-message">* Obavezna ispuna polja</span>
               <span class="required-focus">* Obavezno</span>
@@ -101,14 +101,14 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Kontakt telefon*" required>
+              <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Kontakt telefon*" required>
               <label for="mobile" class="input-label">Kontakt telefon*</label>
               <span class="error-message">* Obavezna ispuna polja</span>
               <span class="required-focus">* Obavezno</span>
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="email" name="email" placeholder="Email*" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email*" required>
               <label for="email" class="input-label">Email*</label>
               <span class="error-message">* Obavezna ispuna polja</span>
               <span class="required-focus">* Obavezno</span>

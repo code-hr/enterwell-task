@@ -11,16 +11,34 @@ if (giveawayForm) {
 
         fields.forEach(field => {
             const formGroup = field.closest('.form-group');
+            const emailError = formGroup.querySelector('.email-error');
 
             field.addEventListener('input', function () {
                 formGroup.classList.remove('error', 'email-error', 'account-number-error');
+                // Reset the email error message
+                if (field.id === 'email') {
+                    emailError.textContent = '* Korisnik s ovim emailom već postoji';
+                }
             });
 
             field.addEventListener('focus', function () {
                 formGroup.classList.remove('error');
             });
 
-            if (!field.value || !field.value.trim()) {
+            // Additional validation for email
+            if (field.id === 'email') {
+                if (!field.value.trim()) {
+                    valid = false;
+                    formGroup.classList.add('error');
+                    emailError.textContent = '* Obavezna ispuna polja';
+                } else if (!field.checkValidity()) {
+                    valid = false;
+                    formGroup.classList.add('error', 'email-error');
+                    emailError.textContent = '* Unesite ispravan email format';
+                } else {
+                    emailError.textContent = '* Korisnik s ovim emailom već postoji';
+                }
+            } else if (!field.value || !field.value.trim()) {
                 valid = false;
                 formGroup.classList.add('error');
             }
@@ -58,8 +76,13 @@ if (giveawayForm) {
         })
         .then(response => response.json())
         .then(data => {
+            const emailField = form.querySelector('[name="email"]');
+            const emailFormGroup = emailField.closest('.form-group');
+            const emailError = emailFormGroup.querySelector('.email-error');
+
             if (data.email_exists) {
-                form.querySelector('[name="email"]').closest('.form-group').classList.add('error', 'email-error');
+                emailFormGroup.classList.add('error', 'email-error');
+                emailError.textContent = '* Korisnik s ovim emailom već postoji';
                 valid = false;
             }
 
