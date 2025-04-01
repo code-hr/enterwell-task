@@ -76,11 +76,8 @@ if (giveawayForm) {
                 form.appendChild(hiddenInput);
 
                 if (form.checkValidity()) {
-                    setTimeout(() => {
-                        form.submit();
-                        loader.remove();
-                        form.classList.remove('loading'); 
-                    }, 3000);
+                    form.submit();
+                    // Do not remove the loader here
                 }
             } else {
                 loader.remove(); 
@@ -94,6 +91,14 @@ if (giveawayForm) {
         });
     });
 }
+
+// Remove loader after page load
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader');
+    if (loader) {
+        loader.remove();
+    }
+});
 
 // Validation file
 function validateFile(input) {
